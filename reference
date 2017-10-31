@@ -30,3 +30,40 @@ package.json:
 {
   "plugins": ["transform-es2015-modules-commonjs", "transform-react-jsx"]
 }
+
+index.js(basic example):
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+const element = (
+  <h1>
+    {addName('Hello')}, {uppercaseString('world')}!
+  </h1>
+)
+
+function addName(str) {
+  return str + 'Young!'
+}
+
+function uppercaseString(str) {
+  return str.toUpperCase()
+}
+
+ReactDOM.render(
+  element,
+  document.getElementById('reaction')
+)
+
+index.html(basic example):
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <link href="styles.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <title>Babelify React JSX</title>
+  </head>
+  <body>
+    <div id="reaction"></div>
+    <script src="main.js"></script> // Will use main.js after doing npm run bundle or bundle:watch to compile index.js to main.js //
+  </body>
+</html>
